@@ -76,14 +76,20 @@
             margin: auto;
             height: 50px;
             width: 40%;
+            padding-top: 30px;
         }
 
-        .buttons button {
-            height: 20px;
-            width: 20px;
-            border: 1px solid transparent;
+        .btn {
+            border-color: #666;
             border-radius: 50%;
-            background-color: tomato;
+            width: 20px;
+            height: 20px;
+        }
+
+        .active,
+        .btn:hover {
+            background-color: #666;
+            color: #fff;
         }
     </style>
 </head>
@@ -103,11 +109,11 @@
             <p> 4</p>
         </div>
     </main>
-    <div class="buttons">
-        <button id="one" type="button" onclick="one()"></button>
-        <button id="two" type="button" onclick="two()"></button>
-        <button id="three" type="button" onclick="three()"></button>
-        <button id="four" type="button" onclick="four()"></button>
+    <div class="buttons" id="myDIV">
+        <button class="btn btn-outline-dark active" id="one" type="button" onclick="one()"></button>
+        <button class="btn btn-outline-dark" id="two" type="button" onclick="two()"></button>
+        <button class="btn btn-outline-dark" id="three" type="button" onclick="three()"></button>
+        <button class="btn btn-outline-dark" id="four" type="button" onclick="four()"></button>
     </div>
 
 
@@ -264,6 +270,15 @@
             document.getElementById("four").style.display = "block";
             document.getElementById("mainImg").style.display = "none";
             document.getElementById("num").innerHTML = "4";
+        }
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
         }
     </script>
 

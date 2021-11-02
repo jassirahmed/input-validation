@@ -4,6 +4,8 @@
 <head>
     <title>photos</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
     <style>
         main {
             width: 100%;
@@ -19,7 +21,7 @@
             transition: all 0.5s;
         }
 
-        input {
+        .but {
             width: 70px;
             height: 70px;
             background-color: #ffffff96;
@@ -32,15 +34,21 @@
         }
 
         .nxt {
-            left: 0;
+            left: 5%;
             top: 50%;
-            transform: translate(-0%, -50%);
+            transform: translate(-50%, -50%);
+            font-weight: 900;
+            border: none;
+            color: #000;
         }
 
         .pre {
             right: 0;
             top: 50%;
-            transform: translate(-0%, -50%);
+            transform: translate(-50%, -50%);
+            font-weight: 900;
+            border: none;
+            color: #000;
         }
 
         .p {
@@ -59,6 +67,7 @@
 
         p {
             width: 40%;
+            margin: 0px;
         }
 
         span {
@@ -77,6 +86,7 @@
             height: 50px;
             width: 40%;
             padding-top: 30px;
+
         }
 
         .btn {
@@ -102,18 +112,25 @@
         <img id="four" src="img/324.jpg" alt="">
         <!-- <input class="nxt" type='button' value='<' name='next' onclick="arr.next('mainImg')" />
         <input class="pre" type='button' value='>' name='prev' onclick="arr.prev('mainImg')" /> -->
-        <input class="pre" type='button' value='>' name='prev' onclick="next()" />
-        <input class="nxt" type='button' value='<' name='next' onclick="prev()" />
+
+        <div class="input">
+            <button class="but pre" type='button' onclick="next()"><i class="fas fa-angle-right"></i></button>
+        </div>
+        <div class="input2">
+            <button class="but nxt" type='button' name='next' onclick="prev()"><i
+                    class="fas fa-angle-left"></i></button>
+        </div>
+
         <div class="p">
             <p id="num">1</p><span>/</span>
             <p> 4</p>
         </div>
     </main>
     <div class="buttons" id="myDIV">
-        <button class="btn btn-outline-dark active" id="one" type="button" onclick="one()"></button>
-        <button class="btn btn-outline-dark" id="two" type="button" onclick="two()"></button>
-        <button class="btn btn-outline-dark" id="three" type="button" onclick="three()"></button>
-        <button class="btn btn-outline-dark" id="four" type="button" onclick="four()"></button>
+        <button class="btn btn-outline-dark active" id="one-btn" type="button" onclick="one()"></button>
+        <button class="btn btn-outline-dark" id="two-btn" type="button" onclick="two()"></button>
+        <button class="btn btn-outline-dark" id="three-btn" type="button" onclick="three()"></button>
+        <button class="btn btn-outline-dark" id="four-btn" type="button" onclick="four()"></button>
     </div>
 
 
@@ -155,13 +172,21 @@
         var count = 0;
 
         function next() {
-            count = count + 1;
+            count++;
+            console.log("sasas", count);
             if (count == 0) {
                 document.getElementById("two").style.display = "none";
                 document.getElementById("three").style.display = "none";
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "block";
                 document.getElementById("num").innerHTML = "1";
+
+                var element = document.getElementById("one-btn");
+                element.classList.add("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
+
             }
             if (count == 1) {
                 document.getElementById("two").style.display = "block";
@@ -169,6 +194,13 @@
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "2";
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.add("active");
+
             }
             if (count == 2) {
                 document.getElementById("two").style.display = "none";
@@ -176,6 +208,16 @@
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "3";
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.add("active");
+
             }
             if (count == 3) {
                 document.getElementById("two").style.display = "none";
@@ -184,18 +226,43 @@
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "4";
                 count = -1;
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.add("active");
             }
-            console.log(count)
         }
 
         function prev() {
-            count = count - 1;
+            count--;
             if (count == 0) {
                 document.getElementById("two").style.display = "none";
                 document.getElementById("three").style.display = "none";
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "block";
                 document.getElementById("num").innerHTML = "1";
+
+                var element = document.getElementById("one-btn");
+                element.classList.add("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
+
+
             }
             if (count == 1) {
                 document.getElementById("two").style.display = "block";
@@ -214,7 +281,7 @@
                 document.getElementById("three").style.display = "none";
                 document.getElementById("four").style.display = "block";
                 document.getElementById("mainImg").style.display = "none";
-                count = -1;
+                count = 1;
             }
             if (count == -1) {
                 document.getElementById("two").style.display = "none";
@@ -222,6 +289,14 @@
                 document.getElementById("four").style.display = "block";
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "4";
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.add("active");
+
+
             }
             if (count == -2) {
                 document.getElementById("two").style.display = "none";
@@ -229,6 +304,14 @@
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "3";
+
+                var element = document.getElementById("three-btn");
+                element.classList.add("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
+
+
             }
             if (count == -3) {
                 document.getElementById("two").style.display = "block";
@@ -237,6 +320,17 @@
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "2";
                 count = 1;
+
+
+
+                var element = document.getElementById("two-btn");
+                element.classList.add("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
             }
         }
 
@@ -246,6 +340,8 @@
             document.getElementById("four").style.display = "none";
             document.getElementById("mainImg").style.display = "block";
             document.getElementById("num").innerHTML = "1";
+            count = 0;
+
         }
 
         function two() {
@@ -254,6 +350,7 @@
             document.getElementById("four").style.display = "none";
             document.getElementById("mainImg").style.display = "none";
             document.getElementById("num").innerHTML = "2";
+            count = 1;
         }
 
         function three() {
@@ -262,6 +359,7 @@
             document.getElementById("four").style.display = "none";
             document.getElementById("mainImg").style.display = "none";
             document.getElementById("num").innerHTML = "3";
+            count = 2;
         }
 
         function four() {
@@ -270,6 +368,7 @@
             document.getElementById("four").style.display = "block";
             document.getElementById("mainImg").style.display = "none";
             document.getElementById("num").innerHTML = "4";
+            count = 3;
         }
         var header = document.getElementById("myDIV");
         var btns = header.getElementsByClassName("btn");

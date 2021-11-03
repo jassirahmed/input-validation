@@ -185,10 +185,16 @@
                 var element = document.getElementById("one-btn");
                 element.classList.add("active");
 
-                var element = document.getElementById("four-btn");
+                var element = document.getElementById("two-btn");
                 element.classList.remove("active");
 
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
             }
+
             if (count == 1) {
                 document.getElementById("two").style.display = "block";
                 document.getElementById("three").style.display = "none";
@@ -201,6 +207,12 @@
 
                 var element = document.getElementById("two-btn");
                 element.classList.add("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
 
             }
             if (count == 2) {
@@ -218,6 +230,9 @@
 
                 var element = document.getElementById("three-btn");
                 element.classList.add("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
 
             }
             if (count == 3) {
@@ -270,20 +285,62 @@
                 document.getElementById("three").style.display = "none";
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "none";
+                document.getElementById("num").innerHTML = "2";
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.add("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
             }
+
             if (count == 2) {
                 document.getElementById("two").style.display = "none";
                 document.getElementById("three").style.display = "block";
                 document.getElementById("four").style.display = "none";
                 document.getElementById("mainImg").style.display = "none";
+                document.getElementById("num").innerHTML = "3";
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.add("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.remove("active");
             }
+
             if (count == 3) {
                 document.getElementById("two").style.display = "none";
                 document.getElementById("three").style.display = "none";
                 document.getElementById("four").style.display = "block";
                 document.getElementById("mainImg").style.display = "none";
+                document.getElementById("num").innerHTML = "4";
                 count = 1;
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("three-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("four-btn");
+                element.classList.add("active")
             }
+
             if (count == -1) {
                 document.getElementById("two").style.display = "none";
                 document.getElementById("three").style.display = "none";
@@ -292,6 +349,12 @@
                 document.getElementById("num").innerHTML = "4";
 
                 var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("three-btn");
                 element.classList.remove("active");
 
                 var element = document.getElementById("four-btn");
@@ -306,14 +369,19 @@
                 document.getElementById("mainImg").style.display = "none";
                 document.getElementById("num").innerHTML = "3";
 
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
+
+                var element = document.getElementById("two-btn");
+                element.classList.remove("active");
+
                 var element = document.getElementById("three-btn");
                 element.classList.add("active");
 
                 var element = document.getElementById("four-btn");
                 element.classList.remove("active");
-
-
             }
+
             if (count == -3) {
                 document.getElementById("two").style.display = "block";
                 document.getElementById("three").style.display = "none";
@@ -323,6 +391,9 @@
                 count = 1;
 
 
+
+                var element = document.getElementById("one-btn");
+                element.classList.remove("active");
 
                 var element = document.getElementById("two-btn");
                 element.classList.add("active");

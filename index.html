@@ -9,7 +9,7 @@
     <style>
         main {
             width: 100%;
-            height: 500px;
+            height: 600px;
             margin: auto;
             position: relative;
         }
@@ -107,9 +107,10 @@
 <body>
     <main>
         <img id='mainImg' src="img/321.jpg" style="display: block;">
-        <img id="two" src="img/320.png" alt="">
+        <img id="two" src="https://wallpaperaccess.com/full/1666427.jpg" alt="">
         <img id="three" src="img/323.jpg" alt="">
-        <img id="four" src="img/324.jpg" alt="">
+        <img id="four" src="https://wallpaperaccess.com/full/1666425.jpg" alt="">
+
         <!-- <input class="nxt" type='button' value='<' name='next' onclick="arr.next('mainImg')" />
         <input class="pre" type='button' value='>' name='prev' onclick="arr.prev('mainImg')" /> -->
 
@@ -369,6 +370,7 @@
             document.getElementById("mainImg").style.display = "none";
             document.getElementById("num").innerHTML = "4";
             count = 3;
+            count = -1;
         }
         var header = document.getElementById("myDIV");
         var btns = header.getElementsByClassName("btn");
